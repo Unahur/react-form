@@ -28,6 +28,7 @@ Las mejores prácticas que seguiremos para crear nuestros formularios son las si
 ## El component Form
 
 Ahora que tenemos definimos buenas prácticas en usabilidad de formularios, vamos a crear un componente llamado Form que las siga. Este formulario recibirá como parámetro un json con los campos a mostrar y funciones a ejecutar.
+La documentación de react-bootstrap la encntrás [acá](https://react-bootstrap.netlify.com/components/forms/#forms-controls)
 
 ```react
 <Form
@@ -63,7 +64,7 @@ En el campo fields, el componente Form debe recibir un array de JSON con los sig
 
 El resultado de este formulario se vería así:
 
-Pega tu form aca!
+?> _TODO_ Pega tu form aca!
 
 Para este formulario existen 2 tipos de validaciones. Para el campo Correo electrónico utilizamos la función validate, que realiza la validación hasta que el usuario haya dejado el campo(onBlur) y para la Contraseña utilizamos la función validateOnChange que valida el campo cada que el usuario teclea una nueva letra (Mejor práctica#6)
 
