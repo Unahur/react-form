@@ -2,33 +2,48 @@
 
 Los formularios son uno de los componentes más importantes en las páginas web. Son la forma en la que los usuarios interaccionan y se comunican.
 
-Vamos a crear un componente en React llamado Form que nos permitirá crear formularios siguiendo las reglas básicas de Usabilidad Web, según las recomendaciones de [Nielsen Norman group](https://www.nngroup.com/articles/web-form-design/)
+Vamos a crear un componente en React llamado Form que nos permitirá crear formularios siguiendo las reglas básicas de Usabilidad Web, según las recomendaciones de [Nielsen Norman group](https://www.nngroup.com/articles/web-form-design/) que vimos en la primer [clase](https://unahur.github.io/ciu/#/00-intro/heuristica)
 
 ## 8 tips de Usabilidad Web para formularios
 
 Las mejores prácticas que seguiremos para crear nuestros formularios son las siguientes:
 
-1. Los labels deben posicionarse alineados y arriba del input
-    Con los labels en esa posición, los formularios son completados a una velocidad mucho más alta.
-2. Los labels no deben estar completamente en mayúsculas
+1. Los **labels** deben posicionarse alineados y arriba del **input**
+    Con los **labels** en esa posición, los formularios son completados a una velocidad mucho más alta.
+2. Los **labels** no deben estar completamente en mayúsculas
     El texto que está escrito completamente en mayúsculas es mucho más difícil de leer y escanear.
-3. No utilices placeholders en lugar de labels
-    Utilizar placeholders en lugar de labels dificulta a los usuarios recordar que información pertenece a que campo, provocando que sea difícil verificar y arreglar errores.
-4. Coloca los checkboxes y radios uno debajo de otro
+3. No utilices **placeholders** en lugar de **labels**
+    Utilizar **placeholders** en lugar de labels dificulta a los usuarios recordar que información pertenece a que campo, provocando que sea difícil verificar y arreglar errores.
+4. Coloca los **checkboxes** y radios uno debajo de otro
     Acomodarlo de esta forma, permite escanearlos más fácilmente.
-5. Provee errores muy visibles y específicos
-    Mostrar los errores en un color que resalte y en negritas, asegura que el usuario no los pase por alto.
-6. No empieces a validar el campo mientras el usuario sigue escribiendo
+5. Provee **errores** muy visibles y específicos
+    Mostrar los **errores** en un color que resalte y en negritas, asegura que el usuario no los pase por alto.
+6. No empieces a **validar** el campo mientras el usuario sigue escribiendo
     Aquí puede haber excepciones, por ejemplo cuando el usuario escribe una contraseña es mejor empezar a validar mientras la escribe.
-7. Relaciona los campos con el tamaño de la información que esperas
-    El largo de los campos ofrece ayuda significativa al usuario para responder las preguntas efectivamente.
-8. Haz una clara distinción entre campos opcionales y requeridos
-    Asegurarse de que el usuario sepa exactamente cuales campos son requeridos, no debería estarlo descubriendo a prueba y error.
+7. Relaciona los **campos** con el tamaño de la información que esperas.
+    El largo de los **campos** ofrece ayuda significativa al usuario para responder las preguntas efectivamente.
+8. Haz una clara distinción entre **campos opcionales** y **requeridos**.
+   Asegurarse de que el usuario sepa exactamente cuales campos son requeridos, no debería estarlo descubriendo a prueba y error.
+
+## Iniciando el proyecto
+
+Vamos a crear un proyecto como hicimos la clase anterior usando el comando create-react-app. Esta guía esta escrita en forma resumida, asumiendo que ya hiciste el proyecto de la clase anterior. En caso que necesites ayuda, podes guiarte por el código del repositorio que encontrás al final de este documento.
+
+```bash
+npx create-react-app react-form
+```
+
+Esto nos va a brindar la estructura básica que nuestra app necesita para funcionar.
+A diferencia de la clase anterior, vamos a incluir bootstrap mediante react-bootstrap. 
+**React-Bootstrap** reemplaza la versión JavaScript de Bootstrap, donde cada componente ha sido construido desde cero como un verdadero componente React, sin dependencias innecesarias como jQuery.
+
+La documentación de react-bootstrap la encontrás [acá](https://react-bootstrap.netlify.com/components/forms/#forms-controls)
 
 ## El component Form
 
 Ahora que tenemos definimos buenas prácticas en usabilidad de formularios, vamos a crear un componente llamado Form que las siga. Este formulario recibirá como parámetro un json con los campos a mostrar y funciones a ejecutar.
-La documentación de react-bootstrap la encntrás [acá](https://react-bootstrap.netlify.com/components/forms/#forms-controls)
+
+Comencemos por el componente Form.js
 
 ```react
 <Form
@@ -64,9 +79,11 @@ En el campo fields, el componente Form debe recibir un array de JSON con los sig
 
 El resultado de este formulario se vería así:
 
-?> _TODO_ Pega tu form aca!
+![formulario](https://miro.medium.com/max/1382/1*Xis2HXLleT0TLdPCmNPQFw.png)
 
-Para este formulario existen 2 tipos de validaciones. Para el campo Correo electrónico utilizamos la función validate, que realiza la validación hasta que el usuario haya dejado el campo(onBlur) y para la Contraseña utilizamos la función validateOnChange que valida el campo cada que el usuario teclea una nueva letra (Mejor práctica#6)
+Para este formulario existen 2 tipos de validaciones. Para el campo Correo electrónico utilizamos la función validate, que realiza la validación hasta que el usuario haya dejado el *campo(onBlur*) y para la Contraseña utilizamos la función *validateOnChange* que valida el campo cada que el usuario teclea una nueva letra (Mejor práctica#6)
+
+![formulario validado](https://miro.medium.com/max/1334/1*ovl2UbaBGBgiSj-1dS3AEw.png)
 
 Vamos a ver como se crea el formulario dentro de la clase Form.
 
@@ -190,6 +207,8 @@ export default Input
 El component Form esta configurado para poder crear un formulario con inputs de diferentes tamaños y así tener la relación entre el tamaño y la información que esperas (mejor práctica#7)
 Para crear este formulario
 
+![formulario de pago](https://miro.medium.com/max/1328/1*__-p7cGXulsHwS8bZ_brPg.png)
+
 Utilizaríamos este JSON
 
 ```react
@@ -273,3 +292,12 @@ var formBilling = {
 ```
 
 El código del ejemplo esta [acá](https://github.com/Unahur/react-form)
+
+Personaliza el formulario, hace que se vea como te guste siguiendo las mejores prácticas de usabilidad indicadas.
+
+## Recursos
+
+Que hago si mi aplicación no funciona? Miro el log, y releo la documentación:
+
+* Documentación de react.org sobre [**formularios**](https://es.reactjs.org/docs/forms.html)
+* Documentación sobre [**react bootstrap**](https://react-bootstrap.netlify.com/components/forms/)
