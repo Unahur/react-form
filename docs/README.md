@@ -93,7 +93,7 @@ render() {
   }
 ```
 
-En la función getField, dependiendo del tipo de campo, creamos el componente y le pasamos en los props toda la información que necesita
+En la función ***getField***, dependiendo del tipo de campo, creamos el componente y le pasamos en los props toda la información que necesita
 
 ```react
 getField(field){
@@ -139,7 +139,7 @@ getField(field){
   }
   ```
 
-Finalmente llegamos a la clase Input, donde creamos el campo, junto con su label, mensajes de error y textos de ayuda.
+Finalmente llegamos a la clase ***Input***, donde creamos el campo, junto con su label, mensajes de error y textos de ayuda.
 
 ```react
 import React, {Component} from 'react';
